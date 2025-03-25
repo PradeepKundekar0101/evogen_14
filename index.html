@@ -837,6 +837,153 @@
             color: var(--primary-color);
             text-decoration: none;
         }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0 50px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.8s forwards;
+          }
+    
+          .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+    
+          .countdown-value {
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--accent-gold);
+          }
+    
+          .countdown-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+          }
+    
+          .description {
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 1s forwards;
+          }
+    
+          .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 1.2s forwards;
+          }
+    
+          .social-link {
+            color: var(--text-color);
+            font-size: 22px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(240, 234, 219, 0.3);
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none;
+          }
+    
+          .social-link:hover {
+            color: var(--dark-bg);
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+          }
+    
+          .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+          }
+    
+          @keyframes fadeIn {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+    
+          @keyframes slideUp {
+            0% {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+    
+          @media screen and (max-width: 768px) {
+            .logo-text {
+              font-size: 32px;
+            }
+    
+            h1 {
+              font-size: 48px;
+            }
+    
+            .logo img {
+              height: 80px;
+            }
+    
+            .countdown {
+              gap: 20px;
+            }
+    
+            .countdown-value {
+              font-size: 30px;
+            }
+          }
+    
+          @media screen and (max-width: 480px) {
+            .logo {
+              flex-direction: column;
+              gap: 15px;
+            }
+    
+            .logo-text {
+              font-size: 28px;
+            }
+    
+            h1 {
+              font-size: 36px;
+            }
+    
+            .countdown {
+              gap: 15px;
+            }
+    
+            .countdown-value {
+              font-size: 24px;
+            }
+    
+            .countdown-label {
+              font-size: 12px;
+            }
+          }
         
         /* Responsive Design */
         @media screen and (min-width: 768px) {
@@ -978,10 +1125,29 @@
     </section>
 
     <!-- Hero Section -->
+
     <section id="hero" class="hero">
         <video autoplay muted loop>
             <source src="Shubham_Kamble__Create_a_realistic_animated_sequence_of_this_anci_https___video-to-video.20e6264b3285ab3e9b554e17efb.mp4" type="video/mp4">
         </video>
+        <div class="countdown">
+            <div class="countdown-item">
+              <div class="countdown-value" id="days">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="hours">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="minutes">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="seconds">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
         <div class="hero-content">
         <div class="container hero-content">
             <h1 class="hero-title">EVOGEN 14.0</h1>
@@ -989,7 +1155,7 @@
             <p class="hero-description">"E V O L V I N G  G E N E R A T I O N S."</p>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJESfzg4SabVxLs3Pc6UnAojB2OMvj1PL0yXcWuzll7LnnIg/viewform"><button class="cta-btn primary-btn">Register Now</button></a>
-                <button class="cta-btn secondary-btn">Download Brochure</button>
+                <a href="final.pdf" download="Brochure.pdf"> <button class="cta-btn secondary-btn" >Download Brochure</button></a>
             </div>
         </div>
     </section>
@@ -1116,10 +1282,10 @@
                     Designed with a vision to foster personality development, ignite entrepreneurial spirit, and enhance technical expertise, Evogen is more than just a competition—it’s a celebration of innovation, collaboration, and learning. With each passing edition, the challenges grow more thrilling, the interactions more inspiring, and the ideas more ingenious, making Evogen an unmissable festival of knowledge, creativity, and fun!
                 </p>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <!--a href="#"><i class="fab fa-facebook-f"></i></a -->
                     <!--a href="#"><i class="fab fa-twitter"></i></a -->
                     <a href="https://www.instagram.com/gcc_bca?utm_source=qr&igsh=Z2x3ZHR4dWhmbmpr"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="http://www.youtube.com/@GCCBCA"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -1183,6 +1349,42 @@
     </footer>
 
     <script>
+         // Countdown Timer
+      const countdownDate = new Date();
+      countdownDate.setDate(countdownDate.getDate() + 1); // Set to 30 days from now
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").innerText = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").innerText = String(minutes).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerText = String(seconds).padStart(
+          2,
+          "0"
+        );
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
         const storySlides = [
             { image: 'Award.jpeg', caption: 'Opening Ceremony of EVOGEN 13.0' },
             { image: 'code.jpeg', caption: 'Coding Event' },
@@ -1249,7 +1451,7 @@
                 title: 'Abhimanyu Cyber Vyuh',
                 tagline: 'In every loop, in every bind—Abhimanyu hacks the mastermind.',
                 description: 'Welcome to Abhimanyu Cyber Vyuh, where we channel the fearless spirit of Abhimanyu, the master strategist who cracked the uncrackable.This isn’t just a cyber event—it’s a modern-day Chakra Vyuh, spinning with chaos, deception, and challenge.Gear up for a series of intense competitions, brain-burning challenges, and unexpected twists.Bring your skills. Break the barriers. Hack like Abhimanyu. Rule the chaos.',
-                posterImage: '',
+                posterImage: 'Abhimanyu.jpg',
                 participants: [
                  '2 Students',
                 ],
@@ -1294,7 +1496,7 @@
                 title: 'Vishwakarma’s ShilpVerse',
                 tagline: 'Where ancient artistry meets modern creativity',
                 description: 'Step into the grand forge of srishti and embrace the legacy of Vishwakarma, the celestial architect. Like his masterpieces- Swargaloka, Pushpaka Vimana, and Dwarka, design a digital masterpiece that bridges ancient wisdom with modern technology. This event challenges to  blend UI/UX design and content creation for crafting futuristic apps and websites, inspired by India’s rich artistic heritage. Bring your creation to life with compelling stories, videos and building a digital mahal that reflects extraordinary craftsmanship.',
-                posterImage: '',
+                posterImage: 'IMG_20250385_000621733.jpeg',
                 participants: [
                  '1 Student',
                 ],
@@ -1340,7 +1542,7 @@
                 title: 'Chanakya’s VakyaNeeti',
                 tagline: 'Where strategy meets speech, and influence rules the market',
                 description: 'Inspired by Acharya Chanakya’s wisdom in Rajaneeti and Vak-Chaturya, this event challenges participants to master the art of Samvaad and Vikraya-Kaushalya. From crafting compelling digital narratives to executing strategic campaigns, competitors must blend creativity with Yukti and Buddhi to outshine their rivals.',
-                posterImage: '',
+                posterImage: 'chanakya.jpg',
                 participants: [
                  '1 Student',
                 ],
@@ -1386,7 +1588,7 @@
                 title: 'Ashoka’s Edict quest',
                 tagline:'Unveil the past, Conquer the knowledge!',
                 description: 'Are you a Tathya Premi or someone who craves a challenge? Get ready for an experience packed with Romancha, Adhyayana, and Puraskara that are truly worth the fight, in Ashoka’s Edict Quest. Sharpen your minds, rise to the occasion, and prepare to dominate the Buddhi Yuddha — the ultimate battle of wisdom and wit.',
-                posterImage: '',
+                posterImage: 'ashoka.jpg',
                 participants: [
                  '1 Student',
                 ],
@@ -1428,7 +1630,7 @@
                 title: 'Varahmihira’s Data Nexus',
                 tagline: 'Decode ancient wisdom, analyze cosmic patterns, and predict the digital future.',
                 description: 'The Varahmihira’s Data Nexus sets the stage for a battle of intellect, where the spirit of Varahmihira inspires participants to embark on a journey of discovery. In this battle where analytical minds, data wizards, and machine learning pioneers compete, decode patterns, and discover hidden knowledge to claim the title of Kalki of Machine Learning.',
-                posterImage: '',
+                posterImage: 'data a.png',
                 participants: [
                  '1 Student',
                 ],
@@ -1447,7 +1649,7 @@
                  {
                   name: 'Prof. Vaibhav Ambekar',
                   role: 'Data Analytics and Machine Learning event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  image: ''
                  },
                  {
                   name: 'Vaishnavi Galagali',
@@ -1484,7 +1686,7 @@
             {
                 name: 'Shri. A. K. Tagare',
                 role: 'Chairman, GC on GCC',
-                image: 'Shri.-A.K.Tagare.jpg',
+                image: 'Shri.-A.K.Tagare.jpeg',
                // bio: 'Head of the evogen event.'
             }
         ];
@@ -1696,185 +1898,261 @@
             const modal = document.createElement('div');
             modal.classList.add('feature-modal');
             modal.innerHTML = `
-             <div class="modal-content">
-              <span class="close-modal">&times;</span>
-              
-              <div class="modal-poster">
-               <img src="${feature.posterImage}" alt="${feature.title} Poster">
-              </div>
-           
-              <div class="modal-header" style="background-image: url('${feature.backgroundImage}')">
-               <h2>${feature.title}</h2>
-              </div>
-           
-              <div class="modal-body">
-               <div class="modal-section">
-                <h3>Event Name</h3>
-                <p>${feature.title}</p>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Tagline</h3>
-                <p>${feature.tagline || 'Unleash Your Potential'}</p>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Description</h3>
-                <p>${feature.description}</p>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Participants</h3>
-                <ul>
-                 ${feature.participants.map(participant => `<li>${participant}</li>`).join('')}
-                </ul>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Requirements</h3>
-                <ul>
-                 ${feature.requirements.map(requirement => `<li>${requirement}</li>`).join('')}
-                </ul>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Skills</h3>
-                <ul>
-                 ${feature.skills.map(skill => `<li>${skill}</li>`).join('')}
-                </ul>
-               </div>
-           
-               <div class="modal-section faculty-section">
-                <h3>Faculty</h3>
-                <div class="faculty-grid">
-                 ${feature.faculty.map((facultyMember, index) => `
-                  <div class="faculty-card">
-                   <img src="${facultyMember.image}" alt="${facultyMember.name}">
-                   <p>${facultyMember.name}</p>
-                   <p class="faculty-role">${facultyMember.role}</p>
+              <div class="modal-overlay">
+                <div class="modal-content">
+                  <span class="close-modal">&times;</span>
+                  
+                  <div class="modal-grid">
+                    <div class="modal-poster">
+                      <img src="${feature.posterImage}" alt="${feature.title} Poster">
+                    </div>
+                    
+                    <div class="modal-details">
+                      <div class="modal-header">
+                        <h2>${feature.title}</h2>
+                        <p class="tagline">${feature.tagline || 'Unleash Your Potential'}</p>
+                      </div>
+                      
+                      <div class="modal-body">
+                        <section>
+                          <h3>Description</h3>
+                          <p>${feature.description}</p>
+                        </section>
+                        
+                        <section>
+                          <h3>Participants</h3>
+                          <ul>
+                            ${feature.participants.map(participant => `<li>${participant}</li>`).join('')}
+                          </ul>
+                        </section>
+                        
+                        <section>
+                          <h3>Requirements</h3>
+                          <ul>
+                            ${feature.requirements.map(requirement => `<li>${requirement}</li>`).join('')}
+                          </ul>
+                        </section>
+                        
+                        <section>
+                          <h3>Skills</h3>
+                          <ul>
+                            ${feature.skills.map(skill => `<li>${skill}</li>`).join('')}
+                          </ul>
+                        </section>
+                        
+                        <section>
+                          <h3>Faculty Coordinators</h3>
+                          <div class="faculty-grid">
+                            ${feature.faculty.map(faculty => `
+                              <div class="faculty-card">
+                                <img src="${faculty.image}" alt="${faculty.name}">
+                                <div class="faculty-info">
+                                  <p class="faculty-name">${faculty.name}</p>
+                                  <p class="faculty-role">${faculty.role}</p>
+                                </div>
+                              </div>
+                            `).join('')}
+                          </div>
+                        </section>
+                        
+                        <section>
+                          <h3>Event Heads</h3>
+                          <div class="event-heads-grid">
+                            ${feature.eventHeads.map(head => `
+                              <div class="event-head-card">
+                                <p class="head-name">${head.name}</p>
+                                <p class="head-contact">${head.contact || 'Contact Not Available'}</p>
+                              </div>
+                            `).join('')}
+                          </div>
+                        </section>
+                      </div>
+                    </div>
                   </div>
-                 `).join('')}
                 </div>
-               </div>
-           
-               <div class="modal-section">
-                <h3>Event Heads</h3>
-                <div class="event-heads-grid">
-                 ${feature.eventHeads.map(head => `
-                  <div class="event-head-card">
-                   <p><strong>${head.name}</strong></p>
-                   <p>${head.contact}</p>
-                  </div>
-                 `).join('')}
-                </div>
-               </div>
               </div>
-             </div>
             `;
-           
-            // Add close modal functionality
-            const closeBtn = modal.querySelector('.close-modal');
-            closeBtn.addEventListener('click', () => {
-             document.body.removeChild(modal);
-            });
-           
-            // Close modal when clicking outside
-            modal.addEventListener('click', (e) => {
-             if (e.target === modal) {
+          
+            // Close modal functionality
+            const closeModal = () => {
               document.body.removeChild(modal);
-             }
+            };
+          
+            // Close button event
+            const closeBtn = modal.querySelector('.close-modal');
+            closeBtn.addEventListener('click', closeModal);
+          
+            // Close when clicking outside of modal content
+            modal.querySelector('.modal-overlay').addEventListener('click', (e) => {
+              if (e.target === modal.querySelector('.modal-overlay')) {
+                closeModal();
+              }
             });
-           
+          
+            // Prevent closing when clicking inside modal content
+            modal.querySelector('.modal-content').addEventListener('click', (e) => {
+              e.stopPropagation();
+            });
+          
             // Append modal to body
             document.body.appendChild(modal);
-           }
-           
-           // Add CSS for the modal (you can add this to your existing CSS)
-           const modalStyles = `
-           .feature-modal {
+          }
+          
+          // CSS for the modal (you can move this to a separate CSS file)
+          const modalStyles = `
+          <style>
+          .feature-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-           }
-           
-           .modal-content {
-            background-color: #1a1a1a;
+            overflow: auto;
+          }
+          
+          .modal-overlay {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+          }
+          
+          .modal-content {
+            background: #1e1e1e;
             border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-            max-height: 90%;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
             overflow-y: auto;
             position: relative;
-           }
-           
-           .close-modal {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+          }
+          
+          .close-modal {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
+            top: 15px;
+            right: 20px;
             font-size: 30px;
+            color: #fff;
             cursor: pointer;
-           }
-           
-           .modal-header {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-            color: white;
-           }
-           
-           .modal-body {
-            padding: 20px;
-           }
-           
-           .faculty-grid {
+            z-index: 10;
+          }
+          
+          .modal-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-           }
-           
-           .faculty-card {
-            text-align: center;
-           }
-           
-           .faculty-card img {
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 40px;
+          }
+          
+          .modal-poster img {
             width: 100%;
+            height: auto;
             border-radius: 10px;
+            object-fit: cover;
+          }
+          
+          .modal-header h2 {
+            color: #f0f0f0;
+            font-size: 2rem;
             margin-bottom: 10px;
-           }
-           
-           .know-more-btn {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-           }
-           
-           .know-more-btn i {
-            margin-left: 10px;
-           }
-           
-           .know-more-btn:hover {
-            background-color: color-mix(in srgb, var(--primary-color) 80%, white);
-           }
-           `;
+          }
+          
+          .modal-header .tagline {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 20px;
+          }
+          
+          .modal-body section {
+            margin-bottom: 20px;
+          }
+          
+          .modal-body h3 {
+            color: #ddd;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+          }
+          
+          .modal-body ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #bbb;
+          }
+          
+          .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+          }
+          
+          .faculty-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+          }
+          
+          .faculty-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+          }
+          
+          .faculty-name {
+            color: #f0f0f0;
+            font-weight: bold;
+          }
+          
+          .faculty-role {
+            color: #888;
+            font-size: 0.9rem;
+          }
+          
+          .event-heads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+          }
+          
+          .event-head-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+          }
+          
+          .head-name {
+            color: #f0f0f0;
+            font-weight: bold;
+          }
+          
+          .head-contact {
+            color: #888;
+            font-size: 0.9rem;
+          }
+          
+          @media (max-width: 768px) {
+            .modal-grid {
+              grid-template-columns: 1fr;
+              padding: 20px;
+            }
+          }
+          </style>
+          `;
+          
+          // Append styles to document head
+          document.head.insertAdjacentHTML('beforeend', modalStyles);
            
            // Create a style element and append to document head
            const styleElement = document.createElement('style');
