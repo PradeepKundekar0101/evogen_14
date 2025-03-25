@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVOGEN 14.0 - Coming Soon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #e87928;
+        --text-color: #f0eadb;
+        --dark-bg: #0a0a0a;
+        --accent-gold: #d5b85a;
+        --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--dark-bg);
+        color: var(--text-color);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(232, 121, 40, 0.08) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        z-index: 0;
+      }
+
+      .coming-soon-container {
+        max-width: 900px;
+        width: 90%;
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo-container {
+        margin-bottom: 40px;
+        animation: fadeIn 1.2s ease forwards;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo img {
+        height: 100px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        transition: var(--transition);
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(213, 184, 90, 0.2);
+      }
+
+      .logo-text {
+        font-family: "Cinzel", serif;
+        font-size: 42px;
+        background: linear-gradient(135deg, var(--accent-gold), #f5d78e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-family: "Cinzel", serif;
+        font-size: 64px;
+        color: #fff;
+        margin-bottom: 40px;
+        position: relative;
+        opacity: 0;
+        animation: slideUp 0.8s ease 0.4s forwards;
+      }
+
+      h1::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0 50px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 0.8s forwards;
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .countdown-value {
+        font-size: 36px;
+        font-weight: 600;
+        color: var(--accent-gold);
+      }
+
+      .countdown-label {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 5px;
+      }
+
+      .description {
+        max-width: 600px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 1s forwards;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 1.2s forwards;
+      }
+
+      .social-link {
+        color: var(--text-color);
+        font-size: 22px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(240, 234, 219, 0.3);
+        border-radius: 50%;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .social-link:hover {
+        color: var(--dark-bg);
+        background-color: var(--accent-gold);
+        border-color: var(--accent-gold);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .logo-text {
+          font-size: 32px;
+        }
+
+        h1 {
+          font-size: 48px;
+        }
+
+        .logo img {
+          height: 80px;
+        }
+
+        .countdown {
+          gap: 20px;
+        }
+
+        .countdown-value {
+          font-size: 30px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .logo {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .logo-text {
+          font-size: 28px;
+        }
+
+        h1 {
+          font-size: 36px;
+        }
+
+        .countdown {
+          gap: 15px;
+        }
+
+        .countdown-value {
+          font-size: 24px;
+        }
+
+        .countdown-label {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+    <div class="coming-soon-container">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="BCA logo.jpg" alt="EVOGEN Logo" />
+          <div class="logo-text">EVOGEN 14.0</div>
+        </div>
+      </div>
+
+      <h1>Coming Soon</h1>
+
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-value" id="days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <p class="description">
+        Get ready for an incredible experience at EVOGEN 14.0 - the flagship
+        event by BCA department. We're preparing something extraordinary for
+        you. Stay tuned!
+      </p>
+
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a
+          href="https://www.instagram.com/gcc_bca?utm_source=qr&igsh=Z2x3ZHR4dWhmbmpr"
+          class="social-link"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <script>
+      // Countdown Timer
+      const countdownDate = new Date();
+      countdownDate.setDate(countdownDate.getDate() + 1); // Set to 30 days from now
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").innerText = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").innerText = String(minutes).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerText = String(seconds).padStart(
+          2,
+          "0"
+        );
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Particles background
+      class Particle {
+        constructor() {
+          this.x = Math.random() * window.innerWidth;
+          this.y = Math.random() * window.innerHeight;
+          this.size = Math.random() * 2 + 1;
+          this.speedX = Math.random() * 0.5 - 0.25;
+          this.speedY = Math.random() * 0.5 - 0.25;
+          this.color = Math.random() > 0.5 ? "#d5b85a" : "#e87928";
+          this.opacity = Math.random() * 0.5 + 0.1;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.x < 0 || this.x > window.innerWidth) this.speedX *= -1;
+          if (this.y < 0 || this.y > window.innerHeight) this.speedY *= -1;
+        }
+
+        draw(ctx) {
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = this.opacity;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function setupParticles() {
+        const canvas = document.createElement("canvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.getElementById("particles").appendChild(canvas);
+
+        const ctx = canvas.getContext("2d");
+        const particles = [];
+        const particleCount =
+          Math.min(window.innerWidth, window.innerHeight) / 10;
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw(ctx);
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener("resize", () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      }
+
+      window.addEventListener("load", setupParticles);
+    </script>
+  </body>
+</html>
