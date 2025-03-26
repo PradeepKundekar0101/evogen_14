@@ -254,6 +254,8 @@
             font-size: clamp(16px, 2.5vw, 20px);
             margin-bottom: 40px;
             max-width: 600px;
+            gap: 50px;
+            flex-wrap: wrap;
         }
         
         .hero-desc {
@@ -620,7 +622,7 @@
         }
         
         .member-img-container {
-            height: 300px;
+            height: 400px;
             overflow: hidden;
             position: relative;
         }
@@ -838,11 +840,11 @@
             text-decoration: none;
         }
 
-        .countdown {
+        /*.countdown {
             display: flex;
-            justify-content: center;
+            justify-content: top center;
             gap: 30px;
-            margin: 30px 0 50px;
+            margin: 30px 0px 50px;
             opacity: 0;
             animation: fadeIn 0.8s ease 0.8s forwards;
           }
@@ -850,7 +852,7 @@
           .countdown-item {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: top center;
           }
     
           .countdown-value {
@@ -864,7 +866,8 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-top: 5px;
-          }
+        
+          }*/
     
           .description {
             max-width: 600px;
@@ -906,7 +909,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
           }
     
-          .particles {
+         /* .particles {
             position: absolute;
             top: 0;
             left: 0;
@@ -914,9 +917,9 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-          }
+          }*/
     
-          @keyframes fadeIn {
+          /*@keyframes fadeIn {
             0% {
               opacity: 0;
             }
@@ -947,9 +950,9 @@
     
             .logo img {
               height: 80px;
-            }
+            }*/
     
-            .countdown {
+           /* .countdown {
               gap: 20px;
             }
     
@@ -983,7 +986,7 @@
             .countdown-label {
               font-size: 12px;
             }
-          }
+          }*/
         
         /* Responsive Design */
         @media screen and (min-width: 768px) {
@@ -1125,7 +1128,6 @@
     </section>
 
     <!-- Hero Section -->
-
     <section id="hero" class="hero">
         <video autoplay muted loop>
             <source src="Shubham_Kamble__Create_a_realistic_animated_sequence_of_this_anci_https___video-to-video.20e6264b3285ab3e9b554e17efb.mp4" type="video/mp4">
@@ -1152,7 +1154,7 @@
         <div class="container hero-content">
             <h1 class="hero-title">EVOGEN 14.0</h1>
             <h2 class="hero-subtitle">Tech <span class="sanskrit-text">युग</span></h2>
-            <p class="hero-description">"E V O L V I N G  G E N E R A T I O N S."</p>
+            <p class="hero-description">E V O L V I N G   G E N E R A T I O N S.</p>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJESfzg4SabVxLs3Pc6UnAojB2OMvj1PL0yXcWuzll7LnnIg/viewform"><button class="cta-btn primary-btn">Register Now</button></a>
                 <a href="ztr.pdf" download="ztr.pdf
@@ -1199,7 +1201,7 @@
     <section id="about" class="about-section">
         <div class="container about-container">
             <div class="about-img">
-                <img src="about.jpeg" alt="About EVOGEN">
+                <img src="A20I2305.JPG" alt="About EVOGEN">
             </div>
             <div class="about-content">
                 <h2 class="about-title">ABOUT US</h2>
@@ -1302,12 +1304,12 @@
             <div class="footer-links">
                 <h4>Events</h4>
                 <ul>
-                    <li><a href="#">Coding & Web Development</a></li>
-                    <li><a href="#">Cybersecurity</a></li>
-                    <li><a href="#">Designing/Content Creation</a></li>
-                    <li><a href="#">Communication</a></li>
-                    <li><a href="#">Quiz</a></li>
-                    <li><a href="#">Data Analytics and Machine Learning</a></li>
+                    <li><a href="#whats-new">Coding & Web Development</a></li>
+                    <li><a href="#whats-new">Cybersecurity</a></li>
+                    <li><a href="#whats-new">Designing/Content Creation</a></li>
+                    <li><a href="#whats-new">Communication</a></li>
+                    <li><a href="#whats-new">Technocrat/Best Manager</a></li>
+                    <li><a href="#whats-new">Data Analytics and Machine Learning</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -1422,19 +1424,15 @@
                 faculty: [
                  {
                   name: 'Prof.Govind .V.Huligol',
-                  role: 'Coding event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  role: 'Coding Event Coordinator',
+                  image: 'Govind V Huilgol.jpg'
                  },
                  {
                   name: 'Prof.Shruti. Kulkarni',
-                  role: 'Coding event coordinator',
-                  image: 'path/to/faculty2.jpg'
+                  role: 'Coding Event Coordinator',
+                  image: 'Prof Shruti Kulkarni.JPG'
                  },
-                 {
-                    name: 'Ms. Sneha. Vandkar',
-                    role: 'Coding event coordinator',
-                    image: 'path/to/faculty2.jpg'
-                   },
+                 
                 ],
                 eventHeads: [
                  {
@@ -1467,19 +1465,15 @@
                 faculty: [
                  {
                   name: 'Dr. Chidambar Inamdar',
-                  role: 'Cybersecurity event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  role: 'Cybersecurity Event Coordinator',
+                  image: 'Chidambar inamdar.jpeg'
                  },
                  {
                   name: 'Prof. Siddesh Revankar',
-                  role: 'Cybersecurity event coordinator',
-                  image: 'path/to/faculty2.jpg'
+                  role: 'Cybersecurity Event Coordinator',
+                  image: 'Siddesh Revankar.jpg'
                  },
-                 {
-                    name: 'Mr. Goudappa Goudannavar',
-                    role: 'Cybersecurity event coordinator',
-                    image: 'path/to/faculty2.jpg'
-                   },
+                 
                 ],
                 eventHeads: [
                  {
@@ -1518,14 +1512,10 @@
                 faculty: [
                  {
                   name: 'Prof. Vaishali Kulkarni',
-                  role: 'Designing and Content Creation event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  role: 'Designing and Content Creation Event Coordinator',
+                  image: 'Vaishali Kulkarni.jpg'
                  },
-                 {
-                  name: 'Miss. Aniketa Kulkarni',
-                  role: 'Designing and Content Creation event coordinator',
-                  image: 'path/to/faculty2.jpg'
-                 },
+                
                 ],
                 eventHeads: [
                  {
@@ -1563,15 +1553,16 @@
                 ],
                 faculty: [
                  {
-                  name: 'Prof. Vaishali Kulkarni',
-                  role: 'Cybersecurity event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  name: 'Prof. Shruti Kanchugar',
+                  role: 'Communication Event Coordinator',
+                  image: 'Shruti Kanchugar.jpg'
                  },
                  {
-                  name: 'Miss. Aniketa Kulkarni',
-                  role: 'Cybersecurity event coordinator',
-                  image: 'path/to/faculty2.jpg'
+                  name: 'Prof. Jyoti Patil',
+                  role: 'Communication Event Coordinator',
+                  image: 'Jyoti Patil.jpeg'
                  },
+                 
                 ],
                 eventHeads: [
                  {
@@ -1606,14 +1597,10 @@
                 faculty: [
                  {
                   name: 'Prof.Rucha Bapat',
-                  role: 'Best Manager event coordinator',
-                  image: 'path/to/faculty1.jpg'
+                  role: 'Best Manager Event Coordinator',
+                  image: 'Prof. Rucha Bapat.jpg'
                  },
-                 {
-                  name: 'Meghana Joshi',
-                  role: 'Best Manager event coordinator',
-                  image: 'path/to/faculty2.jpg'
-                 },
+                 
                 ],
                 eventHeads: [
                  {
@@ -1649,14 +1636,10 @@
                 faculty: [
                  {
                   name: 'Prof. Vaibhav Ambekar',
-                  role: 'Data Analytics and Machine Learning event coordinator',
-                  image: ''
+                  role: 'Data Analytics and Machine Learning Event Coordinator',
+                  image: 'Vaibhav Ambekar.jpg'
                  },
-                 {
-                  name: 'Vaishnavi Galagali',
-                  role: 'Data Analytics and Machine Learning event coordinator',
-                  image: 'path/to/faculty2.jpg'
-                 },
+                
                 ],
                 eventHeads: [
                  {
@@ -1704,6 +1687,12 @@
                 role: 'Event Coordinator',
                 image: 's.jpeg',
                 bio: 'Faculty member overseeing all technical competitions.'
+            },
+            {
+                name: 'Prof. Karuna Deshpande',
+                role: 'Event Coordinator',
+                image: 'Karuna Deshpande.jpg',
+                bio: 'Faculty member overseeing all technical competitions.'
             }
         ];
 
@@ -1717,7 +1706,7 @@
             {
                 name: 'Praisy Pillai',
                 role: 'Ladies Secretary',
-                image: 'pressi.jpeg',
+                image: 'pre.jpg',
                 bio: 'Final year BCA student handling the overall event.'
             }
         ];
