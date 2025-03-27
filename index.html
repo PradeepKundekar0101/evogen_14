@@ -254,8 +254,13 @@
             font-size: clamp(16px, 2.5vw, 20px);
             margin-bottom: 40px;
             max-width: 600px;
-            gap: 50px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            letter-spacing: 5px;
+        }
+
+        .hero-description .line1,
+        .hero-description .line2 {
+            display: block;
         }
         
         .hero-desc {
@@ -1154,7 +1159,10 @@
         <div class="container hero-content">
             <h1 class="hero-title">EVOGEN 14.0</h1>
             <h2 class="hero-subtitle">Tech <span class="sanskrit-text">युग</span></h2>
-            <p class="hero-description">E V O L V I N G   G E N E R A T I O N S.</p>
+            <p class="hero-description">
+                <span class="line1">E V O L V I N G</span>
+                <span class="line2">G E N E R A T I O N S</span>
+            </p>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJESfzg4SabVxLs3Pc6UnAojB2OMvj1PL0yXcWuzll7LnnIg/viewform"><button class="cta-btn primary-btn">Register Now</button></a>
                 <a href="ztr.pdf" download="ztr.pdf
